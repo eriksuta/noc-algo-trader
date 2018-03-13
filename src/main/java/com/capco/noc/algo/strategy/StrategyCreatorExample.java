@@ -89,19 +89,19 @@ public class StrategyCreatorExample implements StrategyCreator {
         StrategyUnitStopLoss stopLoss = new StrategyUnitStopLoss(Ticker.B);
         stopLoss.setValueType(StrategyUnitStopLoss.ValueType.STATIC);
         stopLoss.setPositionSellType(StrategyUnitStopLoss.PositionSellType.ENTIRE_POSITION);
-        stopLoss.setTriggerPrice(65.0); //Sell everything when price drops to 65/share
+        stopLoss.setTriggerPrice(25.0); //Sell everything when price drops to 65/share
 
         //Prepare BUY strategy
         StrategyUnitBuy buy = new StrategyUnitBuy(Ticker.B);
         buy.setValueType(StrategyUnitBuy.ValueType.STATIC);
         buy.setFundsAllocationType(StrategyUnitBuy.FundsAllocationType.ENTIRE_CASH_BALANCE);
-        buy.setTriggerPrice(60.0);  //Buy with all free cash, when price drops to 60/share
+        buy.setTriggerPrice(26.0);  //Buy with all free cash, when price drops to 60/share
 
         //Prepare TAKE PROFIT strategy
         StrategyUnitTakeProfit takeProfit = new StrategyUnitTakeProfit(Ticker.B);
         takeProfit.setValueType(StrategyUnitTakeProfit.ValueType.STATIC);
         takeProfit.setPositionSellType(StrategyUnitTakeProfit.PositionSellType.ENTIRE_POSITION);
-        takeProfit.setTriggerPrice(105.0);  //Sell everything when price drops to 105/share
+        takeProfit.setTriggerPrice(35.0);  //Sell everything when price drops to 105/share
 
         strategies.add(takeProfit);
         strategies.add(stopLoss);

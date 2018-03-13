@@ -36,6 +36,11 @@ public class AlgoTradeServiceImpl implements AlgoTradeService{
     public void performInitialPortfolioAllocation(Portfolio portfolio){
         System.out.println("========== Initial Portfolio Allocation ==========");
 
+        //If initial allocation not set, define everything at 0
+        for(Ticker availableTicker: Ticker.values()){
+            portfolio.getInitialAllocation().putIfAbsent(availableTicker, 0.0);
+        }
+
         //Clear products in portfolio by invalidating old portfolio list
         portfolio.setProducts(new ArrayList<>());
         portfolio.setSnapshotList(new LinkedHashMap<>());
@@ -58,7 +63,13 @@ public class AlgoTradeServiceImpl implements AlgoTradeService{
                     int position = (int)(amountToSpend/unitPrice);
 
                     //Perform the transaction
-                    brokerService.buy(portfolio, ticker, position, unitPrice, date);
+                    if(position > 0) {
+                        brokerService.buy(portfolio, ticker, position, unitPrice, date);
+                    } else {
+                        product.setUnitValue(unitPrice);
+                        product.setPosition(0);
+                        product.setValue(0.0);
+                    }
                 }
             });
         }

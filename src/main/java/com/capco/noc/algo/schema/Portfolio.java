@@ -77,7 +77,7 @@ public class Portfolio {
                 StrategyUnitStopLoss stopLossUnit = (StrategyUnitStopLoss) unit;
 
                 for(Product product: products){
-                    if(stopLossUnit.getTicker().equals(product.getTicker()) && product.getPosition() != 0){
+                    if(stopLossUnit.getTicker().equals(product.getTicker())){
                         stopLossUnit.setLastValue(product.getUnitValue());
                     }
                 }
@@ -88,7 +88,7 @@ public class Portfolio {
                 StrategyUnitTakeProfit takeProfitUnit = (StrategyUnitTakeProfit) unit;
 
                 for(Product product: products){
-                    if(takeProfitUnit.getTicker().equals(product.getTicker()) && product.getPosition() != 0){
+                    if(takeProfitUnit.getTicker().equals(product.getTicker())){
                         takeProfitUnit.setLastValue(product.getUnitValue());
                     }
                 }
