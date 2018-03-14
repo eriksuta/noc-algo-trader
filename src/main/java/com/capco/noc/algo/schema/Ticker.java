@@ -2,10 +2,10 @@ package com.capco.noc.algo.schema;
 
 public enum Ticker {
 
-    D("D", "D_2003-2005.csv", "D_2003-2018.csv"),
-    A("A", "A_2003-2005.csv", "A_2003-2018.csv"),
-    B("B", "B_2003-2005.csv", "B_2003-2018.csv"),
-    C("C", "C_2003-2005.csv", "C_2003-2018.csv");
+    D("D", "D_2003-2013.csv", "D_2003-2018.csv"),
+    A("A", "A_2003-2013.csv", "A_2003-2018.csv"),
+    B("B", "B_2003-2013.csv", "B_2003-2018.csv"),
+    C("C", "C_2003-2013.csv", "C_2003-2018.csv");
 
     private String symbol;
     private String backTestFilePath;
