@@ -11,7 +11,7 @@ source code of the application. Please, download the client from the following l
 After installation, you can checkout the repository running the following command from command
 line in a directory you wish to download the sources to:
 
-`git checkout https://github.com/eriksuta/noc-algo-trader`
+`git clone https://github.com/eriksuta/noc-algo-trader`
 
 ### Maven install ###
 Our application uses maven as a build tool. In order to build the application from downloaded sources. To
